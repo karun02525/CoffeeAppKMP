@@ -2,12 +2,18 @@ package org.coffee
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import org.coffee.di.KoinInitializer
 
-fun main() = application {
-    Window(
-        onCloseRequest = ::exitApplication,
-        title = "CoffeeAppKmp",
-    ) {
-        App()
+fun main() {
+
+    KoinInitializer().init()
+
+    application {
+        Window(
+            onCloseRequest = ::exitApplication,
+            title = "CoffeeAppKmp",
+        ) {
+            App()
+        }
     }
 }

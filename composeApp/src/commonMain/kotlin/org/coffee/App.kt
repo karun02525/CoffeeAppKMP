@@ -21,7 +21,7 @@ import org.coffee.ui.navigation.MainNavigationGraph
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+  //  MaterialTheme {
         MainNavigationGraph(false)
 
     /*    var showContent by remember { mutableStateOf(false) }
@@ -37,5 +37,5 @@ fun App() {
                 }
             }
         }*/
-    }
+   // }
 }
