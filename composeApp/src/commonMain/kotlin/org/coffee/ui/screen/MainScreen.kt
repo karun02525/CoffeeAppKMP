@@ -38,7 +38,7 @@ fun MainScreen(navController: NavController) {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+
         ) {
             ContentScreen(selectedIndex,navController)
         }

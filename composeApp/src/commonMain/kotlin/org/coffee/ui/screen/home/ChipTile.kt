@@ -32,9 +32,10 @@ fun ChipTile() {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        SelectItem(true,"Nice Cafe")
-        SelectItem(false,"Cafe")
-        SelectItem(false,"Nos Cafe")
+        SelectItem(true,"Cafe")
+       SelectItem(false,"Coffee Shop")
+        SelectItem(false, "Bakery")
+        SelectItem(false, "Bar")
     }
 
 

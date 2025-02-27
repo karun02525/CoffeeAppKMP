@@ -29,7 +29,6 @@ fun HomeScreen(
         Header(onSearchClick = onSearchClick, onFilterClick = onFilterClick,onNotificationClick=onNotificationClick)
         Spacer(modifier = Modifier.height(20.dp))
         ChipTile()
-        Spacer(modifier = Modifier.height(10.dp))
         CoffeeItemList(onDetailClick = onDetailClick)
     }
 

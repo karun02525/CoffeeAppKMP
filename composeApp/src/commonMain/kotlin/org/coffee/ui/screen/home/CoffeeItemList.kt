@@ -16,12 +16,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -34,10 +38,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coffeeappkmp.composeapp.generated.resources.Res
 import coffeeappkmp.composeapp.generated.resources.baseline_add_24
+import coffeeappkmp.composeapp.generated.resources.f10
+import coffeeappkmp.composeapp.generated.resources.f3
+import coffeeappkmp.composeapp.generated.resources.f4
+import coffeeappkmp.composeapp.generated.resources.f5
+import coffeeappkmp.composeapp.generated.resources.f6
 import coffeeappkmp.composeapp.generated.resources.profile
 import org.coffee.FilterColor
 import org.coffee.data.CoffeeModel
 import org.coffee.data.CoffeeModel.Companion.getListCoffee
+import org.jetbrains.compose.resources.imageResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -53,8 +63,8 @@ fun CoffeeItemList(
         columns = GridCells.Fixed(2), // Number of columns
         contentPadding = PaddingValues(8.dp)
     ) {
-        items(getListCoffee()) { item ->
-            Item(item){
+        itemsIndexed(getListCoffee()) {index, item ->
+            Item(item,index){
                 onDetailClick(item)
             }
         }
@@ -63,7 +73,30 @@ fun CoffeeItemList(
 }
 
 @Composable
-private fun Item(item: CoffeeModel,goToDetails:(CoffeeModel)->Unit={}) {
+private fun Item(item: CoffeeModel,index:Int,goToDetails:(CoffeeModel)->Unit={}) {
+
+    val image by remember {
+        derivedStateOf {
+            when (index) {
+                0 -> {
+                    Res.drawable.f3
+                }
+                1 -> {
+                    Res.drawable.f4
+                }
+                2 -> {
+                    Res.drawable.f5
+                }
+                3 -> {
+                    Res.drawable.f6
+                }
+                else -> {
+                    Res.drawable.f10
+                }
+            }
+        }
+    }
+
     Column(
         modifier = Modifier
             .clickable { goToDetails(item) }
@@ -75,10 +108,10 @@ private fun Item(item: CoffeeModel,goToDetails:(CoffeeModel)->Unit={}) {
             modifier = Modifier
                 .clip(shape = RoundedCornerShape(8.dp))
                 .fillMaxWidth()
-                .height(150.dp)
+                .height(140.dp)
         ) {
             Image(
-                painter = painterResource(Res.drawable.profile),
+                painter = painterResource(image),
                 contentDescription = "",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -127,7 +160,7 @@ private fun Item(item: CoffeeModel,goToDetails:(CoffeeModel)->Unit={}) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                "₹ ${item.price}",
+                "₹${item.rating.toString()}",
                 modifier = Modifier,
                 color = Color.Black,
                 fontWeight = FontWeight.Bold,

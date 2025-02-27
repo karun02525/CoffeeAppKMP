@@ -51,6 +51,7 @@ fun SearchTile(modifier: Modifier=Modifier,
             Image(
                 painter = painterResource(Res.drawable.ic_search),
                 contentScale = ContentScale.Crop,
+                colorFilter = ColorFilter.tint(Color.Gray),
                 contentDescription = "",
                 modifier = Modifier
                     .padding(start = 15.dp)
@@ -64,7 +65,7 @@ fun SearchTile(modifier: Modifier=Modifier,
                     .align(Alignment.CenterStart)
                     .padding(start = 60.dp),
                 fontSize = 18.sp,
-                color = Color.Black,
+                color = Color.Gray,
                 fontWeight = FontWeight.SemiBold,
                 text = "Search..."
             )

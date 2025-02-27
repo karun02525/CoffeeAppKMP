@@ -21,21 +21,22 @@ import org.coffee.ui.navigation.MainNavigationGraph
 @Composable
 @Preview
 fun App() {
-  //  MaterialTheme {
-        MainNavigationGraph(false)
+        MaterialTheme {
+                MainNavigationGraph(false)
 
-    /*    var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.profile), null)
-                    Text("Compose: $greeting")
-                }
-            }
-        }*/
-   // }
+                /*    var showContent by remember { mutableStateOf(false) }
+                    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                        Button(onClick = { showContent = !showContent }) {
+                            Text("Click me!")
+                        }
+                        AnimatedVisibility(showContent) {
+                            val greeting = remember { Greeting().greet() }
+                            Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                                Image(painterResource(Res.drawable.profile), null)
+                                Text("Compose: $greeting")
+                            }
+                        }
+                    }*/
+                // }
+        }
 }

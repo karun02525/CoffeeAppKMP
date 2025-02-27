@@ -21,6 +21,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import org.coffee.CoffeeBTN
 import org.coffee.CoffeeBg
+import org.coffee.FilterColor
+import org.coffee.White
 
 @Composable
 fun BottomNavigationBar(onTab:(Int)->Unit) {
@@ -37,9 +39,9 @@ fun BottomNavigationBar(onTab:(Int)->Unit) {
     }
 
     NavigationBar(
-        containerColor = CoffeeBg,
-        contentColor = CoffeeBTN,
-        tonalElevation=2.dp,
+        containerColor = FilterColor,
+        contentColor = White,
+        tonalElevation=5.dp,
         modifier = Modifier
             .graphicsLayer {
                 shape= RoundedCornerShape(

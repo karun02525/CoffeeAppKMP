@@ -2,6 +2,7 @@ package org.coffee.ui.screen.home
 
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
@@ -31,6 +33,7 @@ import androidx.compose.ui.unit.sp
 import coffeeappkmp.composeapp.generated.resources.Res
 import coffeeappkmp.composeapp.generated.resources.arrow_drop_down
 import coffeeappkmp.composeapp.generated.resources.header_bg
+import coffeeappkmp.composeapp.generated.resources.img
 import coffeeappkmp.composeapp.generated.resources.profile
 import org.jetbrains.compose.resources.painterResource
 
@@ -60,15 +63,24 @@ fun Header(
                     .fillMaxSize()
             )
 
-            Icon(
-                imageVector = Icons.Default.Notifications,
-                tint = Color.White,
-                contentDescription = "",
+            Box(
                 modifier = Modifier
                     .clickable { onNotificationClick() }
-                    .padding(end = 20.dp, top = 20.dp)
+                    .padding(end = 15.dp, top = 40.dp)
                     .align(Alignment.TopEnd)
-            )
+            ){
+                Icon(
+                    imageVector = Icons.Default.Notifications,
+                    tint = Color.White,
+                    contentDescription = "",
+                )
+                Box(modifier = Modifier
+                    .padding(end = 3.dp)
+                    .align(Alignment.TopEnd)
+                    .size(6.dp)
+                    .clip(CircleShape)
+                    .background(color = Color.Red, shape = CircleShape))
+            }
 
             Column(
                 modifier = Modifier
@@ -83,7 +95,7 @@ fun Header(
                     fontSize = 18.sp,
                     color = Color.White,
                     fontWeight = FontWeight.Light,
-                    text = "Balaji Elite "
+                    text = "By XYZ Hotels,Road 569203."
                 )
 
                 Row(
@@ -97,7 +109,7 @@ fun Header(
                         fontSize = 20.sp,
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
-                        text = "Bomosandra,BLR"
+                        text = "Bangalore,BLR"
                     )
 
                     Image(
@@ -109,7 +121,7 @@ fun Header(
             }
 
             Image(
-                painter = painterResource(Res.drawable.profile),
+                painter = painterResource(Res.drawable.img),
                 contentDescription = "",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

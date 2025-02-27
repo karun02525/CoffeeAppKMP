@@ -20,8 +20,7 @@ fun MainNavigationGraph(isLoggedIn:Boolean) {
    // val isLoggedIn by viewmodel.isLogged.collectAsStateWithLifecycle()
     NavHost(
         navController = navController,
-        modifier = Modifier
-            .windowInsetsPadding(WindowInsets.safeContent),
+        modifier = Modifier,
         startDestination = if (isLoggedIn) SubGraph.Dashboard else SubGraph.Auth,
         enterTransition = {
             slideIntoContainer(

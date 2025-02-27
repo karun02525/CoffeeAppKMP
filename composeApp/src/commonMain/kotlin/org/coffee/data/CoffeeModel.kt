@@ -1,7 +1,9 @@
 package org.coffee.data
 
 
+import coffeeappkmp.composeapp.generated.resources.Res
 import kotlinx.serialization.Serializable
+import org.jetbrains.compose.resources.DrawableResource
 
 
 @Serializable
@@ -11,68 +13,22 @@ data class CoffeeModel(
     val desc: String="",
     val star: Double=5.3,
     var rating: String="23224",
-    val price: Double=5.3
+    val price: Double=5.3,
+    val imageUrl:String="f2",
 ) {
     companion object {
         fun getListCoffee(): List<CoffeeModel> {
             return listOf(
-                CoffeeModel(
-                    1,
-                    "Café au lait",
-                    "For a French twist on your morning cup, try this recipe using equal parts coffee and milk. It’s typically made with dark roasted coffee",
-                    3.4,
-                    "2323",
-                    343.30
-                ),
-
-                CoffeeModel(
-                    2,
-                    "Dirty chai latte",
-                    "Upgrade your at-home barista skills with a comforting twist on a chai latte. It has a splash of coffee and is finished with a sprinkle of nutmeg",
-                    3.4,
-                    "2323",
-                    343.30
-                ),
-                CoffeeModel(
-                    3,
-                    "Our best coffee recipes",
-                    "Celebrate the irresistible flavour of coffee in our range of espresso cocktails and iced drinks or munch on cappuccino cakes, tiramisu, ice creams and more.",
-                    3.4,
-                    "2323",
-                    943.10
-                ),
-                CoffeeModel(
-                    4,
-                    "Coffee granita",
-                    "",
-                    3.4,
-                    "323",
-                    543.00
-                ),
-                CoffeeModel(
-                    5,
-                    "Espresso mud ",
-                    "To finish your meal try this take on coffee and dessert, and if you have any coffee liqueur in the back of the drinks cabinet, put a splash in the syrup",
-                    3.4,
-                    "2323",
-                    343.30
-                ),
-                CoffeeModel(
-                    6,
-                    "Best reusable coffee cups",
-                    "Kane Statton, coffee roaster and head barista at Nude Espresso in London, shares his tips for perfecting that milky froth when making a cup at home.",
-                    3.4,
-                    "2323",
-                    343.30
-                ),
-                CoffeeModel(
-                    7,
-                    "Café au lait",
-                    "Actually healthy, can caffeine boost energy and performance, and how much is too much? We look at the science behind the health claims",
-                    3.4,
-                    "2323",
-                    343.30
-                )
+                CoffeeModel(1, "Espresso", "A strong shot of espresso", 4.5, "190", 2.5, "https://example.com/espresso.jpg"),
+                CoffeeModel(2, "Cappuccino", "A combination of espresso, steamed milk, and foam", 4.8, "290", 3.5, "https://example.com/cappuccino.jpg"),
+                CoffeeModel(3, "Latte", "A combination of espresso and steamed milk", 4.2, "401", 3.0, "https://example.com/latte.jpg"),
+                CoffeeModel(4, "Mocha", "A variant of latte made with chocolate syrup or cocoa powder", 4.6, "530", 3.8, "https://example.com/mocha.jpg"),
+                CoffeeModel(5, "Americano", "Espresso diluted with hot water", 4.1, "600", 2.8, "https://example.com/americano.jpg"),
+                CoffeeModel(6, "Macchiato", "A shot of espresso 'marked' with a small amount of milk", 4.4, "900", 3.2, "https://example.com/macchiato.jpg"),
+                CoffeeModel(7, "Breve", "A latte made with steamed half-and-half instead of milk", 4.7, "1500", 4.2, "https://example.com/breve.jpg"),
+                CoffeeModel(8, "Flat White", "A double shot of espresso topped with a thin layer of microfoam", 4.9, "1800", 4.5, "https://example.com/flatwhite.jpg"),
+                CoffeeModel(9, "Cortado", "Equal parts espresso and milk", 4.3, "1000", 3.5, "https://example.com/cortado.jpg"),
+                CoffeeModel(10, "Cold Brew", "A type of coffee that is brewed without heat", 4.7, "2000", 4.0, "https://example.com/coldbrew.jpg"),
             )
         }
     }

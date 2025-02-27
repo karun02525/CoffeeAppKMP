@@ -105,11 +105,14 @@ fun LoginContent(
         )
 
         Text(
-            "Welcome back ",
+            "Welcome\n\nCoffee Shop ",
             style = MaterialTheme.typography.labelLarge,
             color = Color.White,
+            textAlign = TextAlign.Center,
+            letterSpacing = 2.sp,
             fontSize = 30.sp,
             modifier = Modifier
+                .fillMaxWidth()
                 .padding(top = 100.dp)
                 .align(Alignment.TopCenter)
         )
